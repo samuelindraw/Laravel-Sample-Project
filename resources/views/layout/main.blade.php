@@ -22,8 +22,18 @@
                 <div class="navbar-nav">
                     <a class="nav-link active" aria-current="page" href="/">Calculator</a>
                     <a class="nav-link" href="/bahancrud">Crud Bahan Baku</a>
-                    <a class="nav-link" href="/student">EXPORT- IMPORT</a>
-                    <a class="nav-link" href="/about">About</a>
+                    <a class="nav-link" href="/student">EXPORT- IMPORT &nbsp;</a>
+                    <a class="nav-link" href="/about">Tes Kecil</a>
+                    <a class="nav-link" href="/teskecil/hitungabjad">Cek abjad</a>
+                    <a class="nav-link" href="/teskecil/cekkalender">Cek Kalender</a>
+                    <a class="nav-link" href="/teskecil/pisahstr">Pisah Str</a>
+                    <a class="nav-link" href="/teskecil/pisahstr">Pisah Str</a>
+                    <a class="nav-link" href="/teskecil/fibonaci">Fibonaci</a>
+                    <a class="nav-link" href="/teskecil/deretangka">Deret Angka</a>
+                    <a class="nav-link" href="/teskecil/counter">Counter4digit</a>
+                    <a class="nav-link" href="/teskecil/bintang">Bintang</a>
+                    <a class="nav-link" href="/teskecil/separator">Separator</a>
+                    <a class="nav-link" href="/teskecil/jamtambah">Jam</a>
                 </div>
             </div>
         </div>
