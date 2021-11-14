@@ -159,24 +159,24 @@ class teskecilController extends Controller
         if ($nilai < 12) {
             $temp = " " . $huruf[$nilai];
         } else if ($nilai < 20) {
-            $temp = penyebut($nilai - 10) . " belas";
+            $temp = self::penyebut($nilai - 10) . " belas";
         } else if ($nilai < 100) {
-            $temp = penyebut($nilai / 10) . " puluh" . penyebut($nilai % 10);
+            $temp =  self::penyebut($nilai / 10) . " puluh" . self::penyebut($nilai % 10);
         } else if ($nilai < 200) {
             $temp = " seratus" . penyebut($nilai - 100);
         } else if ($nilai < 1000) {
-            $temp = penyebut($nilai / 100) . " ratus" . penyebut($nilai % 100);
+            $temp =  self::penyebut($nilai / 100) . " ratus" . self::penyebut($nilai % 100);
         } else if ($nilai < 2000) {
-            $temp = " seribu" . penyebut($nilai - 1000);
+            $temp = " seribu" . self::penyebut($nilai - 1000);
         } else if ($nilai < 1000000) {
-            $temp = penyebut($nilai / 1000) . " ribu" . penyebut($nilai % 1000);
+            $temp = self::penyebut($nilai / 1000) . " ribu" . self::penyebut($nilai % 1000);
         } else if ($nilai < 1000000000) {
             $temp = "";
-            $temp = penyebut($nilai / 1000000) . " juta" . penyebut($nilai % 1000000);
+            $temp = self::penyebut($nilai / 1000000) . " juta" . self::penyebut($nilai % 1000000);
         } else if ($nilai < 1000000000000) {
-            $temp = penyebut($nilai / 1000000000) . " milyar" . penyebut(fmod($nilai, 1000000000));
+            $temp = self::penyebut($nilai / 1000000000) . " milyar" . self::penyebut(fmod($nilai, 1000000000));
         } else if ($nilai < 1000000000000000) {
-            $temp = penyebut($nilai / 1000000000000) . " trilyun" . penyebut(fmod($nilai, 1000000000000));
+            $temp = self::penyebut($nilai / 1000000000000) . " trilyun" . self::penyebut(fmod($nilai, 1000000000000));
         }
         return $temp;
     }
@@ -193,6 +193,33 @@ class teskecilController extends Controller
         }
         return $hasil;
     }
+    public function pembilang()
+    {
+        return view('teskecil/pembilang', 
+        [
+            'title' => 'Pembilang',
+            "active" =>'pembilang',
+        ]);
+    }
+    public function pembilang_proses(Request $request)
+    {
+        $request->validate([
+            'angka' => 'numeric|integer|required'
+        ]);
+        $val = 0;
+        $nilai = $request->angka;
+        $hasil = self::penyebut($nilai);
+        $result = array(
+            'title' => 'Pembilang',
+            "active" =>'pembilang',
+            'angka' => $request->angka,
+            'hasil' => $hasil,
+        );
+        return view('teskecil/pembilang')->with($result);
+    }
+
+
+
     public function fibonaci_proses(Request $request)
     {
         if (isset($_POST["cekiterasi"])) {

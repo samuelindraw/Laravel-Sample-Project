@@ -27,7 +27,7 @@
                     <a class="nav-link" href="/teskecil/hitungabjad">Cek abjad</a>
                     <a class="nav-link" href="/teskecil/cekkalender">Cek Kalender</a>
                     <a class="nav-link" href="/teskecil/pisahstr">Pisah Str</a>
-                    <a class="nav-link" href="/teskecil/pisahstr">Pisah Str</a>
+                    <a class="nav-link" href="/teskecil/pembilang">Pembilang</a>
                     <a class="nav-link" href="/teskecil/fibonaci">Fibonaci</a>
                     <a class="nav-link" href="/teskecil/deretangka">Deret Angka</a>
                     <a class="nav-link" href="/teskecil/counter">Counter4digit</a>

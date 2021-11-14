@@ -43,8 +43,8 @@ Route::post('/teskecil/cekkalender',[teskecilController::class,'validkalender'])
 Route::get('/teskecil/pisahstr',[teskecilController::class,'pisahstr']);
 Route::post('/teskecil/pisahstr',[teskecilController::class,'cekstr']);
 //convet pembilang uang
-Route::get('/teskecil/pisahstr',[teskecilController::class,'pisahstr']);
-Route::post('/teskecil/pisahstr',[teskecilController::class,'cekstr']);
+Route::get('/teskecil/pembilang',[teskecilController::class,'pembilang']);
+Route::post('/teskecil/pembilang',[teskecilController::class,'pembilang_proses']);
 //Deret Fibonaci
 Route::get('/teskecil/fibonaci',[teskecilController::class,'fibonaci']);
 Route::post('/teskecil/fibonaci',[teskecilController::class,'fibonaci_proses']);
