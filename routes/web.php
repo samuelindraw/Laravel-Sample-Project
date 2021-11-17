@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\crudController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\hitungController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\teskecilController;
 
 /*
@@ -15,12 +17,20 @@ use App\Http\Controllers\teskecilController;
 |
 */
 
+
+
+Route::get('/login',[LoginController::class,'index'])->name('login')->middleware('guest');
+Route::post('/login',[LoginController::class,'authenticate']);
+Route::post('/logout',[LoginController::class,'logout']);
+Route::post('/register',[RegisterController::class,'store']);
+Route::get('/register',[RegisterController::class,'index'])->middleware('guest');
+
 Route::get('/', function () {
     return view('welcome');
 });
 Route::post('/',[hitungController::class,'hitung']);
 Route::get('/',[hitungController::class,'index']);
-Route::get('/bahancrud',[crudController::class,'index']);
+Route::get('/bahancrud',[crudController::class,'index'])->middleware('auth');
 Route::get('/tambahData',[crudController::class,'tambah']);
 Route::post('/tambahData',[crudController::class,'simpan']);
 Route::get('/bahancrud/{id}',[crudController::class,'editData']);

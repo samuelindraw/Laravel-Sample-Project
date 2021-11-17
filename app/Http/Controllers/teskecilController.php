@@ -578,7 +578,7 @@ class teskecilController extends Controller
                 $hasil = "Menuju hari ". $harinya. " jam ". $total . ""; 
                          
             } else {
-                $hasil = "Menuju hari: " . $harinya . "  Jam: " . $jumlah_jam . " Jam: " . ($total - 12) . "";
+                $hasil = "Menuju hari: " . $harinya . "  Jam: " . ($total - 12) . "";
             }
         }
         $result = array(
